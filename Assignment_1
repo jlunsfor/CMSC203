@@ -1,0 +1,82 @@
+/*
+ * Class: CMSC203
+ * Instructor: Grinberg
+ * Description: This is a wifi diagnostic troubleshooter.
+ * Due 12 Febrary 2023
+ * Platform: Eclipse 2012-06, Java SE 16
+ * I pledge that I have completed the programming
+ * assignment independently. I have not copied the code
+ * from a student or any source. I have not given my code
+ * to any student.
+ * Jeremy Lunsford
+ */
+
+import java.util.Scanner;
+
+public class WifiDiagnostics {
+
+	public static void main(String[] args) {
+		// Declare variables
+		boolean completeFlag = false;
+		String userResponse = "0";
+		Scanner stdin = new Scanner(System.in);
+		String confirmation = "Did that fix the problem (yes or no)? ";
+		
+		// Begin prompts
+		if (completeFlag == false) {
+			System.out.println("Reboot the computer and try to connect.");
+			while (!(userResponse.equalsIgnoreCase("yes") || userResponse.equalsIgnoreCase("no"))) {
+				System.out.print(confirmation);
+				userResponse = stdin.nextLine();
+				// System.out.println("userRespone = " + userResponse + " completeFlag = " + completeFlag);
+				if (userResponse.equalsIgnoreCase("yes")) {
+					completeFlag = true;
+				}
+			}
+			userResponse = "false";
+		}
+		if (completeFlag == false) {
+			System.out.println("Reboot the router and try to connect.");
+			while (!(userResponse.equalsIgnoreCase("yes") || userResponse.equalsIgnoreCase("no"))) {
+				System.out.print(confirmation);
+				userResponse = stdin.nextLine();
+				// System.out.println("userRespone = " + userResponse + " completeFlag = " + completeFlag);
+				if (userResponse.equalsIgnoreCase("yes")) {
+					completeFlag = true;
+				}
+			}
+			userResponse = "false";
+		}
+		if (completeFlag == false) {
+			System.out.println("Make sure the cables connecting the router are firmly plugged in and power is getting to the router.");
+			while (!(userResponse.equalsIgnoreCase("yes") || userResponse.equalsIgnoreCase("no"))) {
+				System.out.print(confirmation);
+				userResponse = stdin.nextLine();
+				// System.out.println("userRespone = " + userResponse + " completeFlag = " + completeFlag);
+				if (userResponse.equalsIgnoreCase("yes")) {
+					completeFlag = true;
+				}
+			}
+			userResponse = "false";
+		}
+		if (completeFlag == false) {
+			System.out.println("Move the computer closer to the router and try to connect.");
+			while (!(userResponse.equalsIgnoreCase("yes") || userResponse.equalsIgnoreCase("no"))) {
+				System.out.print(confirmation);
+				userResponse = stdin.nextLine();
+				// System.out.println("userRespone = " + userResponse + " completeFlag = " + completeFlag);
+				if (userResponse.equalsIgnoreCase("yes")) {
+					completeFlag = true;
+				}
+			}
+			userResponse = "false";
+		}
+		if (completeFlag == false) {
+			System.out.println("Contact your ISP.");
+			completeFlag = true;
+		}
+		
+		System.out.print("Done");
+	}
+
+}
